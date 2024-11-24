@@ -1,0 +1,245 @@
+/* General Layout */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f5f9fc;
+    display: flex;
+    height: 100vh;
+    flex-direction: column; /* Ensures the content fits the height of the screen */
+}
+
+.container {
+    display: flex;
+    flex-grow: 1;
+    width: 100%;
+    min-height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 25%;
+    background: #c0392b; /* Red */
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    position: relative;
+    transition: width 0.3s ease; /* Smooth transition for width change */
+    height: 100vh; /* Full viewport height */
+    overflow-y: auto; /* Enables vertical scrolling */
+}
+
+.sidebar .profile {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.sidebar .profile-pic {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.sidebar .medical-history {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.sidebar .medical-history h3 {
+    margin-bottom: 10px;
+}
+
+.sidebar .medical-history ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar .medical-history li {
+    margin: 5px 0;
+}
+
+.sidebar .contact-btn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background: #f39c12; /* Gold */
+    border: none;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.sidebar .contact-btn:hover {
+    background: #e67e22; /* Darker gold on hover */
+}
+
+/* Main Dashboard */
+.dashboard {
+    width: 50%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto; /* Ensures scrollable content if needed */
+}
+
+/* Metrics Section */
+.metrics {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+    flex-wrap: wrap; /* Allows items to stack on smaller screens */
+}
+
+.metric {
+    text-align: center;
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 30%;
+    min-width: 200px; /* Prevents metrics from becoming too narrow */
+    margin-bottom: 20px;
+}
+
+.metric h3 {
+    font-size: 16px;
+    color: #c0392b; /* Red */
+}
+
+.metric p {
+    font-size: 24px;
+    color: #333;
+}
+
+.metric span {
+    font-size: 14px;
+    color: #777;
+}
+
+/* Chart Section */
+.chart-container {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    height: 300px; /* Fixed height for consistent layout */
+    margin-top: 20px;
+}
+
+/* Image Section */
+.vital-sign-image {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.vital-sign-image img {
+    max-width: 90%; /* Scalable size */
+    height: auto;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+/* Right Panel */
+.right-panel {
+    width: 25%;
+    background: white;
+    padding: 20px;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.right-panel h3 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.standards {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.standard {
+    text-align: center;
+    background: #f9f9f9;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.standard h4 {
+    font-size: 16px;
+    color: #555;
+}
+
+.standard p {
+    font-size: 18px;
+    color: #c0392b; /* Red */
+    font-weight: bold;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 40%; /* Slightly narrower sidebar on medium screens */
+    }
+
+    .dashboard {
+        width: 60%;
+    }
+
+    .right-panel {
+        display: none; /* Hide right panel on smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .sidebar {
+        width: 100%; /* Full width sidebar on small screens */
+        padding: 10px; /* Reduced padding */
+    }
+
+    .dashboard {
+        width: 100%;
+    }
+
+    .metrics {
+        flex-direction: column;
+    }
+
+    .metric {
+        margin-bottom: 10px;
+        width: 100%; /* Full width on small screens */
+    }
+
+    .chart-container {
+        margin-top: 20px;
+        width: 100%;
+    }
+
+    .vital-sign-image img {
+        max-width: 70%; /* Smaller image on smaller screens */
+    }
+}
+
+@media (max-width: 320px) {
+    .sidebar {
+        width: 100%; /* Full width for sidebar on extra small screens */
+        height: auto; /* Avoid vertical stretch */
+    }
+
+    .container {
+        flex-direction: column; /* Stack elements vertically on extra small screens */
+    }
+
+    .dashboard {
+        width: 100%;
+    }
+}
