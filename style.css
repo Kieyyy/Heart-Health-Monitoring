@@ -14,7 +14,6 @@ body {
     min-height: 100vh;
 }
 
-
 .sidebar {
     width: 25%;
     background: #c0392b; 
@@ -74,7 +73,6 @@ body {
     background: #e67e22; 
 }
 
-
 .dashboard {
     width: 50%;
     padding: 20px;
@@ -82,7 +80,6 @@ body {
     flex-direction: column;
     overflow-y: auto; 
 }
-
 
 .metrics {
     display: flex;
@@ -117,7 +114,6 @@ body {
     color: #777;
 }
 
-
 .chart-container {
     background: white;
     padding: 20px;
@@ -126,7 +122,6 @@ body {
     height: 300px; 
     margin-top: 20px;
 }
-
 
 .vital-sign-image {
     margin-top: 20px;
@@ -140,7 +135,6 @@ body {
     border-radius: 10px;
     margin-top: 20px;
 }
-
 
 .right-panel {
     width: 25%;
@@ -183,7 +177,6 @@ body {
     color: #c0392b; 
     font-weight: bold;
 }
-
 
 @media (max-width: 768px) {
     .sidebar {
