@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="style.css">
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <style>
-    /* Styling for the dashboard */
+
     .dashboard {
       width: 100%;
       padding: 20px;
@@ -39,7 +39,7 @@
       margin-top: 30px;
     }
 
-    /* Styling for the patient history widget */
+
     .patient-history-widget {
       background-color: #f4f4f4;
       border: 1px solid #ddd;
@@ -65,7 +65,7 @@
     .patient-history-widget .see-more-btn {
       display: inline-block;
       padding: 8px 20px;
-      background-color: #ffd700; /* Gold color */
+      background-color: #ffd700; 
       color: white;
       border-radius: 5px;
       text-decoration: none;
@@ -75,7 +75,7 @@
     }
 
     .patient-history-widget .see-more-btn:hover {
-      background-color: #e6c200; /* Darker gold on hover */
+      background-color: #e6c200; 
     }
 
     .patient-history-widget .history-list {
@@ -97,22 +97,22 @@
       color: #777;
     }
 
-    /* Styling for the date-time (Gold Design) */
+
     .date-time {
       text-align: center;
-      font-size: 1.5em; /* Increased size for better visibility */
-      color: #fff; /* White text color */
-      background-color: #ffd700; /* Gold background */
-      padding: 10px 20px; /* Adds padding for a better look */
-      border-radius: 8px; /* Rounded corners */
-      margin-bottom: 20px; /* Space below the element */
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Slight shadow for depth */
-      font-weight: bold; /* Bold text for emphasis */
+      font-size: 1.5em; 
+      color: #fff; 
+      background-color: #ffd700; 
+      padding: 10px 20px; 
+      border-radius: 8px; 
+      margin-bottom: 20px; 
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+      font-weight: bold; 
       display: inline-block;
       width: fit-content;
     }
 
-    /* Styling for the Heart Rhythm section */
+
     .rhythm {
       margin-top: 40px;
       text-align: center;
@@ -124,7 +124,7 @@
       margin-bottom: 20px;
     }
 
-    /* Responsive adjustments */
+
     @media screen and (max-width: 768px) {
       .metrics {
         flex-direction: column;
@@ -135,14 +135,14 @@
         margin-bottom: 20px;
       }
 
-      /* Ensure chart fits well on smaller screens */
+
       .rhythm canvas {
         width: 100% !important;
         height: auto !important;
       }
     }
 
-    /* Sidebar Expansion */
+
     .sidebar {
       width: 250px;
       transition: width 0.3s ease;
@@ -160,7 +160,7 @@
 </head>
 <body>
   <div class="container">
-    <!-- Sidebar -->
+
     <div class="sidebar">
       <div class="profile">
         <img src="https://via.placeholder.com/100" alt="Profile Picture" class="profile-pic">
@@ -177,7 +177,7 @@
         </ul>
       </div>
 
-      <!-- Patient History Folder -->
+
       <div class="patient-history-widget">
         <h4>Patient History Folder</h4>
         <ul class="history-list">
@@ -203,7 +203,7 @@
 
       <button class="contact-btn">Contact Doctor</button>
 
-      <!-- ThingSpeak Link -->
+
       <div class="thingspeak-link" style="margin-top: 20px;">
         <a href="https://thingspeak.mathworks.com/channels/2718435" target="_blank" style="text-decoration: none; color: #ffd700; font-size: 1.2em; font-weight: bold; border: 1px solid #ffd700; padding: 10px; border-radius: 5px; display: block; text-align: center;">
           Thingspeak
@@ -211,9 +211,9 @@
       </div>
     </div>
 
-    <!-- Main Dashboard -->
+
     <div class="dashboard">
-      <!-- Date and Time Display -->
+
       <div id="date-time" class="date-time"></div>
 
       <div class="metrics">
@@ -234,7 +234,7 @@
         </div>
       </div>
 
-      <!-- Heart Rate Rhythm Section -->
+
       <div class="rhythm">
         <h4>Heart Rate Rhythm</h4>
         <canvas id="heartRateChart"></canvas>
@@ -251,13 +251,13 @@
   </div>
 
   <script>
-    // Update date and time every second
+
     setInterval(function() {
       var currentDateTime = new Date().toLocaleString();
       document.getElementById("date-time").innerText = currentDateTime;
     }, 1000);
 
-    // Random update for metrics
+
     function updateMeasurement(type) {
       let randomValue;
       if (type === "bloodOxygenSaturation") {
@@ -270,7 +270,7 @@
       document.getElementById(type).innerText = randomValue;
     }
 
-    // Heart Rate Rhythm Chart Data
+
     var ctx = document.getElementById('heartRateChart').getContext('2d');
     var heartRateChart = new Chart(ctx, {
       type: 'line',
@@ -297,27 +297,27 @@
       }
     });
 
-    // Function to update heart rate data
+
     function updateHeartRateData() {
       var newHeartRate = Math.floor(Math.random() * (90 - 80 + 1)) + 80; // Generate random BPM between 80 and 90
       var currentTime = heartRateChart.data.labels.length;
 
-      // Remove the first label (to simulate movement)
+
       heartRateChart.data.labels.shift();
       heartRateChart.data.labels.push(currentTime);
 
-      // Remove the first data point (to simulate movement)
+
       heartRateChart.data.datasets[0].data.shift();
       heartRateChart.data.datasets[0].data.push(newHeartRate);
 
-      // Update the chart
+
       heartRateChart.update();
     }
 
-    // Set an interval to update the heart rate every second
+
     setInterval(updateHeartRateData, 1000);
 
-    // Toggle the visibility of the patient history details
+
     function toggleHistory(id) {
       var historyDetails = document.getElementById(id);
       if (historyDetails.style.display === "none" || historyDetails.style.display === "") {
