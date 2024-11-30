@@ -1,11 +1,10 @@
-/* General Layout */
 body {
     margin: 0;
     font-family: Arial, sans-serif;
     background: #f5f9fc;
     display: flex;
     height: 100vh;
-    flex-direction: column; /* Ensures the content fits the height of the screen */
+    flex-direction: column; 
 }
 
 .container {
@@ -15,10 +14,10 @@ body {
     min-height: 100vh;
 }
 
-/* Sidebar */
+
 .sidebar {
     width: 25%;
-    background: #c0392b; /* Red */
+    background: #c0392b; 
     color: white;
     display: flex;
     flex-direction: column;
@@ -26,9 +25,9 @@ body {
     padding: 20px;
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
     position: relative;
-    transition: width 0.3s ease; /* Smooth transition for width change */
-    height: 100vh; /* Full viewport height */
-    overflow-y: auto; /* Enables vertical scrolling */
+    transition: width 0.3s ease; 
+    height: 100vh; 
+    overflow-y: auto; 
 }
 
 .sidebar .profile {
@@ -64,7 +63,7 @@ body {
 .sidebar .contact-btn {
     margin-top: 20px;
     padding: 10px 20px;
-    background: #f39c12; /* Gold */
+    background: #f39c12; 
     border: none;
     color: white;
     border-radius: 5px;
@@ -72,24 +71,24 @@ body {
 }
 
 .sidebar .contact-btn:hover {
-    background: #e67e22; /* Darker gold on hover */
+    background: #e67e22; 
 }
 
-/* Main Dashboard */
+
 .dashboard {
     width: 50%;
     padding: 20px;
     display: flex;
     flex-direction: column;
-    overflow-y: auto; /* Ensures scrollable content if needed */
+    overflow-y: auto; 
 }
 
-/* Metrics Section */
+
 .metrics {
     display: flex;
     justify-content: space-around;
     margin-bottom: 20px;
-    flex-wrap: wrap; /* Allows items to stack on smaller screens */
+    flex-wrap: wrap; 
 }
 
 .metric {
@@ -99,13 +98,13 @@ body {
     border-radius: 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     width: 30%;
-    min-width: 200px; /* Prevents metrics from becoming too narrow */
+    min-width: 200px; 
     margin-bottom: 20px;
 }
 
 .metric h3 {
     font-size: 16px;
-    color: #c0392b; /* Red */
+    color: #c0392b;
 }
 
 .metric p {
@@ -118,17 +117,17 @@ body {
     color: #777;
 }
 
-/* Chart Section */
+
 .chart-container {
     background: white;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    height: 300px; /* Fixed height for consistent layout */
+    height: 300px; 
     margin-top: 20px;
 }
 
-/* Image Section */
+
 .vital-sign-image {
     margin-top: 20px;
     display: flex;
@@ -136,13 +135,13 @@ body {
 }
 
 .vital-sign-image img {
-    max-width: 90%; /* Scalable size */
+    max-width: 90%; 
     height: auto;
     border-radius: 10px;
     margin-top: 20px;
 }
 
-/* Right Panel */
+
 .right-panel {
     width: 25%;
     background: white;
@@ -181,14 +180,14 @@ body {
 
 .standard p {
     font-size: 18px;
-    color: #c0392b; /* Red */
+    color: #c0392b; 
     font-weight: bold;
 }
 
-/* Responsive Design */
+
 @media (max-width: 768px) {
     .sidebar {
-        width: 40%; /* Slightly narrower sidebar on medium screens */
+        width: 40%; 
     }
 
     .dashboard {
@@ -196,14 +195,14 @@ body {
     }
 
     .right-panel {
-        display: none; /* Hide right panel on smaller screens */
+        display: none; 
     }
 }
 
 @media (max-width: 480px) {
     .sidebar {
-        width: 100%; /* Full width sidebar on small screens */
-        padding: 10px; /* Reduced padding */
+        width: 100%; 
+        padding: 10px; 
     }
 
     .dashboard {
@@ -216,7 +215,7 @@ body {
 
     .metric {
         margin-bottom: 10px;
-        width: 100%; /* Full width on small screens */
+        width: 100%; 
     }
 
     .chart-container {
@@ -225,18 +224,18 @@ body {
     }
 
     .vital-sign-image img {
-        max-width: 70%; /* Smaller image on smaller screens */
+        max-width: 70%; 
     }
 }
 
 @media (max-width: 320px) {
     .sidebar {
-        width: 100%; /* Full width for sidebar on extra small screens */
-        height: auto; /* Avoid vertical stretch */
+        width: 100%; 
+        height: auto; 
     }
 
     .container {
-        flex-direction: column; /* Stack elements vertically on extra small screens */
+        flex-direction: column; 
     }
 
     .dashboard {
