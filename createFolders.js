@@ -2,7 +2,6 @@
 const fs = require('fs');
 const path = require('path');
 
-
 function createPatientHistoryFolders(patientId) {
   const baseDir = path.join(__dirname, 'patient-history', patientId);
 
@@ -15,6 +14,5 @@ function createPatientHistoryFolders(patientId) {
     }
   });
 }
-
 
 createPatientHistoryFolders('jm-galvero');
