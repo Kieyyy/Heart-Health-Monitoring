@@ -1,8 +1,8 @@
-// savePatientData.js
+
 const fs = require('fs');
 const path = require('path');
 
-// Function to save patient data
+
 function savePatientData(patientId, interval, data) {
   const timestamp = new Date().toISOString();
   const fileName = `${timestamp.split('T')[0]}_${timestamp.split('T')[1].split('.')[0]}.json`;
@@ -21,7 +21,7 @@ function savePatientData(patientId, interval, data) {
   fs.writeFileSync(filePath, JSON.stringify(dataToSave, null, 2));
 }
 
-// Example usage
+
 const patientData = {
   heartRate: 85,
   temperature: 36.7,
@@ -30,4 +30,4 @@ const patientData = {
   notes: "Normal readings"
 };
 
-savePatientData('manuel-garcia', 'history-1hr', patientData); // Save data for 1-hour interval
+savePatientData('jm-galvero', 'history-1hr', patientData); 
